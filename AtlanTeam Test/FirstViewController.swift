@@ -14,31 +14,32 @@ class FirstViewController: UIViewController {
     @IBAction func userSelection(_ sender: Any) {
         let selectedButton = sender as! UIButton
         if selectedButton.isSelected == true {
+            selectedButton.isSelected = false
             UIView.animate(withDuration: 0.2) {
-                selectedButton.isSelected = false
-                self.cardThreeStack.arrangedSubviews[0].isHidden = false
-                self.cardThreeStack.arrangedSubviews[2].isHidden = false
-                self.cardThreeStack.arrangedSubviews[3].isHidden = false
-                self.cardThreeStack.arrangedSubviews[4].isHidden = false
+                for view in self.cardThreeStack.arrangedSubviews {
+                    view.isHidden = false
+                }
                 (self.cardThreeStack.arrangedSubviews[5] as! UITextView).text = ""
                 self.cardThreeStack.arrangedSubviews[5].isHidden = true
+                self.cardThreeStack.distribution = .fillEqually
             }
         } else {
+            selectedButton.isSelected = true
             UIView.animate(withDuration: 0.2) {
-                (self.cardThreeStack.arrangedSubviews[1] as! UIButton).isSelected = true
-                self.cardThreeStack.arrangedSubviews[0].isHidden = true
-                self.cardThreeStack.arrangedSubviews[2].isHidden = true
-                self.cardThreeStack.arrangedSubviews[3].isHidden = true
-                self.cardThreeStack.arrangedSubviews[4].isHidden = true
-                (self.cardThreeStack.arrangedSubviews[5] as! UITextView).text = "efefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefefnvnvvcxbvnxbvsjfeopfe"
+                for view in self.cardThreeStack.arrangedSubviews {
+                    if view.tag != selectedButton.tag {
+                        view.isHidden = true
+                    }
+                }
+                (self.cardThreeStack.arrangedSubviews[5] as! UITextView).text = "grdgrdgrg"
                 self.cardThreeStack.arrangedSubviews[5].isHidden = false
+                self.cardThreeStack.distribution = .fill
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.cardThreeStack.arrangedSubviews[5].isHidden = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 

@@ -137,51 +137,51 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwf-V6-BeU">
                                                 <rect key="frame" x="0.0" y="0.0" width="169.5" height="183"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5MO-fR-fTx">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5MO-fR-fTx">
                                                         <rect key="frame" x="0.0" y="0.0" width="169.5" height="183"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iht-b1-I7O">
-                                                                <rect key="frame" x="0.0" y="0.0" width="169.5" height="13"/>
+                                                            <button opaque="NO" tag="301" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iht-b1-I7O">
+                                                                <rect key="frame" x="0.0" y="0.0" width="169.5" height="36.5"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <state key="selected" title="Остальные"/>
+                                                                <state key="selected" title="Назад"/>
                                                                 <connections>
                                                                     <action selector="userSelection:" destination="9pv-A4-QxB" eventType="touchUpInside" id="MpN-B8-KF5"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjt-I1-Yc8">
-                                                                <rect key="frame" x="0.0" y="13" width="169.5" height="30"/>
+                                                            <button opaque="NO" tag="302" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjt-I1-Yc8">
+                                                                <rect key="frame" x="0.0" y="36.5" width="169.5" height="36.5"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <state key="selected" title="Остальные"/>
+                                                                <state key="selected" title="Назад"/>
                                                                 <connections>
                                                                     <action selector="userSelection:" destination="9pv-A4-QxB" eventType="touchUpInside" id="lwi-ft-N3h"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyc-32-B1x">
-                                                                <rect key="frame" x="0.0" y="43" width="169.5" height="30"/>
+                                                            <button opaque="NO" tag="303" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyc-32-B1x">
+                                                                <rect key="frame" x="0.0" y="73" width="169.5" height="37"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <state key="selected" title="Остальные"/>
+                                                                <state key="selected" title="Назад"/>
                                                                 <connections>
                                                                     <action selector="userSelection:" destination="9pv-A4-QxB" eventType="touchUpInside" id="jFd-2U-6ni"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yc-aY-vbF">
-                                                                <rect key="frame" x="0.0" y="73" width="169.5" height="30"/>
+                                                            <button opaque="NO" tag="304" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yc-aY-vbF">
+                                                                <rect key="frame" x="0.0" y="110" width="169.5" height="36.5"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <state key="selected" title="Остальные"/>
+                                                                <state key="selected" title="Назад"/>
                                                                 <connections>
                                                                     <action selector="userSelection:" destination="9pv-A4-QxB" eventType="touchUpInside" id="PcN-83-nTW"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEb-IA-CTs">
-                                                                <rect key="frame" x="0.0" y="103" width="169.5" height="30"/>
+                                                            <button opaque="NO" tag="305" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEb-IA-CTs">
+                                                                <rect key="frame" x="0.0" y="146.5" width="169.5" height="36.5"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <state key="selected" title="Остальные"/>
+                                                                <state key="selected" title="Назад"/>
                                                                 <connections>
                                                                     <action selector="userSelection:" destination="9pv-A4-QxB" eventType="touchUpInside" id="lDE-zF-SeP"/>
                                                                 </connections>
                                                             </button>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="rgrgrgrgrgr" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="W0R-T2-u8g">
-                                                                <rect key="frame" x="0.0" y="133" width="169.5" height="50"/>
+                                                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" tag="306" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0R-T2-u8g">
+                                                                <rect key="frame" x="0.0" y="183" width="169.5" height="0.0"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
