@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E862DDCB438124F649DA161 /* Pods_AtlanTeam_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8D0038BF799EBD8F08CD45 /* Pods_AtlanTeam_TestTests.framework */; };
 		84350A7E1F93AEF200CD1F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350A7D1F93AEF200CD1F23 /* AppDelegate.swift */; };
 		84350A801F93AEF200CD1F23 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350A7F1F93AEF200CD1F23 /* FirstViewController.swift */; };
 		84350A821F93AEF200CD1F23 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350A811F93AEF200CD1F23 /* SecondViewController.swift */; };
@@ -15,6 +16,8 @@
 		84350A8A1F93AEF200CD1F23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84350A881F93AEF200CD1F23 /* LaunchScreen.storyboard */; };
 		84350A951F93AEF200CD1F23 /* AtlanTeam_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350A941F93AEF200CD1F23 /* AtlanTeam_TestTests.swift */; };
 		84350AA01F93AEF300CD1F23 /* AtlanTeam_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84350A9F1F93AEF300CD1F23 /* AtlanTeam_TestUITests.swift */; };
+		86D6654C3AA333A57C4F9F60 /* Pods_AtlanTeam_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 878F622DF1DD8B6DF50189B2 /* Pods_AtlanTeam_TestUITests.framework */; };
+		E4001F376E80BA8B77CD4D42 /* Pods_AtlanTeam_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0244429AEAB6B766EAE3A7BA /* Pods_AtlanTeam_Test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0244429AEAB6B766EAE3A7BA /* Pods_AtlanTeam_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtlanTeam_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C71B66A79CBAC2B3A1D6AF0 /* Pods-AtlanTeam TestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtlanTeam TestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtlanTeam TestTests/Pods-AtlanTeam TestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3228804B2617A68AD3CDCBEC /* Pods-AtlanTeam TestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtlanTeam TestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtlanTeam TestTests/Pods-AtlanTeam TestTests.release.xcconfig"; sourceTree = "<group>"; };
+		5F8D0038BF799EBD8F08CD45 /* Pods_AtlanTeam_TestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtlanTeam_TestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B54A2DF4EB156C48E72E21 /* Pods-AtlanTeam TestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtlanTeam TestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtlanTeam TestUITests/Pods-AtlanTeam TestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		84350A7A1F93AEF200CD1F23 /* AtlanTeam Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AtlanTeam Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84350A7D1F93AEF200CD1F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84350A7F1F93AEF200CD1F23 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		84350A9B1F93AEF300CD1F23 /* AtlanTeam TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AtlanTeam TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84350A9F1F93AEF300CD1F23 /* AtlanTeam_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtlanTeam_TestUITests.swift; sourceTree = "<group>"; };
 		84350AA11F93AEF300CD1F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		878F622DF1DD8B6DF50189B2 /* Pods_AtlanTeam_TestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AtlanTeam_TestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F5FE96A3CB0F3F44947C60F /* Pods-AtlanTeam Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtlanTeam Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtlanTeam Test/Pods-AtlanTeam Test.debug.xcconfig"; sourceTree = "<group>"; };
+		911C152C6C53D48D0D6782B4 /* Pods-AtlanTeam Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtlanTeam Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-AtlanTeam Test/Pods-AtlanTeam Test.release.xcconfig"; sourceTree = "<group>"; };
+		9A4F5B05EAE0EBCFB9850807 /* Pods-AtlanTeam TestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtlanTeam TestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtlanTeam TestUITests/Pods-AtlanTeam TestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4001F376E80BA8B77CD4D42 /* Pods_AtlanTeam_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E862DDCB438124F649DA161 /* Pods_AtlanTeam_TestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D6654C3AA333A57C4F9F60 /* Pods_AtlanTeam_TestUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				84350A931F93AEF200CD1F23 /* AtlanTeam TestTests */,
 				84350A9E1F93AEF300CD1F23 /* AtlanTeam TestUITests */,
 				84350A7B1F93AEF200CD1F23 /* Products */,
+				8924F50E91509C71A700939B /* Pods */,
+				F6CCF9685DCE55BD62F51BA1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +145,29 @@
 			path = "AtlanTeam TestUITests";
 			sourceTree = "<group>";
 		};
+		8924F50E91509C71A700939B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F5FE96A3CB0F3F44947C60F /* Pods-AtlanTeam Test.debug.xcconfig */,
+				911C152C6C53D48D0D6782B4 /* Pods-AtlanTeam Test.release.xcconfig */,
+				0C71B66A79CBAC2B3A1D6AF0 /* Pods-AtlanTeam TestTests.debug.xcconfig */,
+				3228804B2617A68AD3CDCBEC /* Pods-AtlanTeam TestTests.release.xcconfig */,
+				9A4F5B05EAE0EBCFB9850807 /* Pods-AtlanTeam TestUITests.debug.xcconfig */,
+				77B54A2DF4EB156C48E72E21 /* Pods-AtlanTeam TestUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F6CCF9685DCE55BD62F51BA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0244429AEAB6B766EAE3A7BA /* Pods_AtlanTeam_Test.framework */,
+				5F8D0038BF799EBD8F08CD45 /* Pods_AtlanTeam_TestTests.framework */,
+				878F622DF1DD8B6DF50189B2 /* Pods_AtlanTeam_TestUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84350AA41F93AEF300CD1F23 /* Build configuration list for PBXNativeTarget "AtlanTeam Test" */;
 			buildPhases = (
+				01E6A01C06371E6F230A7C4C /* [CP] Check Pods Manifest.lock */,
 				84350A761F93AEF200CD1F23 /* Sources */,
 				84350A771F93AEF200CD1F23 /* Frameworks */,
 				84350A781F93AEF200CD1F23 /* Resources */,
+				7878278935B21DBF5B069C1B /* [CP] Embed Pods Frameworks */,
+				E030612BAD19DA239A7E33C1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84350AA71F93AEF300CD1F23 /* Build configuration list for PBXNativeTarget "AtlanTeam TestTests" */;
 			buildPhases = (
+				A3A8D982B9F0FDE2BAE70942 /* [CP] Check Pods Manifest.lock */,
 				84350A8C1F93AEF200CD1F23 /* Sources */,
 				84350A8D1F93AEF200CD1F23 /* Frameworks */,
 				84350A8E1F93AEF200CD1F23 /* Resources */,
+				51E2811122A939B877E843D6 /* [CP] Embed Pods Frameworks */,
+				AF97AD8CF28E784E76131723 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84350AAA1F93AEF300CD1F23 /* Build configuration list for PBXNativeTarget "AtlanTeam TestUITests" */;
 			buildPhases = (
+				1684D67C994955B8DD48D118 /* [CP] Check Pods Manifest.lock */,
 				84350A971F93AEF200CD1F23 /* Sources */,
 				84350A981F93AEF200CD1F23 /* Frameworks */,
 				84350A991F93AEF200CD1F23 /* Resources */,
+				8DEC1E5EF9C16E905E68E6FA /* [CP] Embed Pods Frameworks */,
+				07146AD7EE682A4C7AF32AC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +305,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01E6A01C06371E6F230A7C4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		07146AD7EE682A4C7AF32AC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtlanTeam TestUITests/Pods-AtlanTeam TestUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1684D67C994955B8DD48D118 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		51E2811122A939B877E843D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtlanTeam TestTests/Pods-AtlanTeam TestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7878278935B21DBF5B069C1B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtlanTeam Test/Pods-AtlanTeam Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DEC1E5EF9C16E905E68E6FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtlanTeam TestUITests/Pods-AtlanTeam TestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3A8D982B9F0FDE2BAE70942 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AF97AD8CF28E784E76131723 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtlanTeam TestTests/Pods-AtlanTeam TestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E030612BAD19DA239A7E33C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AtlanTeam Test/Pods-AtlanTeam Test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84350A761F93AEF200CD1F23 /* Sources */ = {
@@ -428,6 +615,7 @@
 		};
 		84350AA51F93AEF300CD1F23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F5FE96A3CB0F3F44947C60F /* Pods-AtlanTeam Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -443,6 +631,7 @@
 		};
 		84350AA61F93AEF300CD1F23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 911C152C6C53D48D0D6782B4 /* Pods-AtlanTeam Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +647,7 @@
 		};
 		84350AA81F93AEF300CD1F23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C71B66A79CBAC2B3A1D6AF0 /* Pods-AtlanTeam TestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,6 +665,7 @@
 		};
 		84350AA91F93AEF300CD1F23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3228804B2617A68AD3CDCBEC /* Pods-AtlanTeam TestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -492,6 +683,7 @@
 		};
 		84350AAB1F93AEF300CD1F23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A4F5B05EAE0EBCFB9850807 /* Pods-AtlanTeam TestUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -508,6 +700,7 @@
 		};
 		84350AAC1F93AEF300CD1F23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77B54A2DF4EB156C48E72E21 /* Pods-AtlanTeam TestUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

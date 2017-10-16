@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITextFieldDelegate {
+   
+    
+    @IBOutlet var fields: [UITextField]!
+    @IBOutlet var textViews: [UITextView]!    
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var cardThreeStack: UIStackView!
     @IBAction func userSelection(_ sender: Any) {
@@ -40,6 +46,14 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for field in fields {
+            field.delegate = self
+        }
+        let imageURL = URL.init(string: "https://placehold.it/600/24f355")
+        imageView.sd_setImageWithPreviousCachedImage(with: imageURL, placeholderImage: nil, options: SDWebImageOptions.lowPriority, progress: { (receivedSize: Int, expectedSize: Int) in
+        }, completed: { (image: UIImage?, error: Error?, cacheType: SDImageCacheType, imageURL: URL?) in
+        })
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -48,6 +62,18 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == "" {
+            return true
+        } else {
+            if textField.text!.count >= 3 {
+                return false
+            } else {
+                return true
+            }
+        }
+
+    }
 
 }
 
