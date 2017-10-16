@@ -8,6 +8,8 @@
 
 import UIKit
 import SDWebImage
+import AFNetworking
+//https://jsonplaceholder.typicode.com
 
 class FirstViewController: UIViewController, UITextFieldDelegate {
    
@@ -15,8 +17,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var fields: [UITextField]!
     @IBOutlet var textViews: [UITextView]!    
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var cardThreeStack: UIStackView!
+    
+    //var data: Dictionary<Int, Array<NSDictionary>>
+    let characters = CharacterSet(charactersIn: "0123456789")
+    let requestOperationManager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager.init(
+        baseURL: URL.init(string: "https://jsonplaceholder.typicode.com"))
+    
     @IBAction func userSelection(_ sender: Any) {
         let selectedButton = sender as! UIButton
         if selectedButton.isSelected == true {
@@ -47,6 +54,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         for field in fields {
             field.delegate = self
         }
@@ -65,14 +73,16 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == "" {
             return true
-        } else {
+        }
+        if string.rangeOfCharacter(from: characters) != nil {
             if textField.text!.count >= 3 {
                 return false
             } else {
                 return true
             }
+        } else {
+            return false
         }
-
     }
 
 }

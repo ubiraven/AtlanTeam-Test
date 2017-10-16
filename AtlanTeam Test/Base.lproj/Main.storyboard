@@ -26,20 +26,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-Bi-WxN">
                                                 <rect key="frame" x="0.0" y="0.0" width="169.5" height="183.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVE-eE-Kgi">
-                                                        <rect key="frame" x="8" y="8" width="26" height="22"/>
+                                                    <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WVE-eE-Kgi">
+                                                        <rect key="frame" x="60" y="8" width="50" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="C3X-PO-qUb"/>
+                                                            <constraint firstAttribute="width" constant="50" id="UMD-99-cov"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                     </textField>
-                                                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsn-La-Q48">
-                                                        <rect key="frame" x="42" y="8" width="119.5" height="22"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Подтвердить"/>
-                                                    </button>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Введите значение от 1 до 100" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-LG-4aZ">
                                                         <rect key="frame" x="8" y="38" width="153.5" height="137.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,14 +45,10 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Wsn-La-Q48" secondAttribute="trailing" constant="8" id="0i1-jn-YOO"/>
-                                                    <constraint firstItem="Wsn-La-Q48" firstAttribute="height" secondItem="WVE-eE-Kgi" secondAttribute="height" id="7z4-Cx-tg4"/>
-                                                    <constraint firstItem="Wsn-La-Q48" firstAttribute="top" secondItem="N0h-Bi-WxN" secondAttribute="top" constant="8" id="87L-yg-mLJ"/>
-                                                    <constraint firstItem="Wsn-La-Q48" firstAttribute="leading" secondItem="WVE-eE-Kgi" secondAttribute="trailing" constant="8" id="8VQ-2T-o2Y"/>
                                                     <constraint firstAttribute="trailing" secondItem="SbQ-LG-4aZ" secondAttribute="trailing" constant="8" id="IxI-Ar-CMF"/>
-                                                    <constraint firstItem="WVE-eE-Kgi" firstAttribute="leading" secondItem="N0h-Bi-WxN" secondAttribute="leading" constant="8" id="Mmk-Qp-NRZ"/>
                                                     <constraint firstItem="WVE-eE-Kgi" firstAttribute="top" secondItem="N0h-Bi-WxN" secondAttribute="top" constant="8" id="QYv-Qb-ujc"/>
                                                     <constraint firstItem="SbQ-LG-4aZ" firstAttribute="leading" secondItem="N0h-Bi-WxN" secondAttribute="leading" constant="8" id="UdY-V2-gBG"/>
+                                                    <constraint firstItem="WVE-eE-Kgi" firstAttribute="centerX" secondItem="N0h-Bi-WxN" secondAttribute="centerX" id="c7P-0Z-ob0"/>
                                                     <constraint firstAttribute="bottom" secondItem="SbQ-LG-4aZ" secondAttribute="bottom" constant="8" id="dJa-h5-p68"/>
                                                     <constraint firstItem="SbQ-LG-4aZ" firstAttribute="top" secondItem="WVE-eE-Kgi" secondAttribute="bottom" constant="8" id="xO1-3E-PYk"/>
                                                 </constraints>
@@ -78,20 +70,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQQ-R0-020">
                                                 <rect key="frame" x="181.5" y="0.0" width="169.5" height="183.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="any-wM-g4U">
-                                                        <rect key="frame" x="8" y="8" width="26" height="22"/>
+                                                    <textField opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="any-wM-g4U">
+                                                        <rect key="frame" x="60" y="8" width="50" height="22"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="3FB-Zd-kD6"/>
                                                             <constraint firstAttribute="height" constant="22" id="cT2-cf-hya"/>
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
                                                     </textField>
-                                                    <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARk-S1-DoX">
-                                                        <rect key="frame" x="42" y="8" width="119.5" height="22"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Подтвердить"/>
-                                                    </button>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Введите значение от 1 до 500" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndq-Oe-Xw4">
                                                         <rect key="frame" x="8" y="38" width="153.5" height="137.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,14 +89,10 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="any-wM-g4U" firstAttribute="centerX" secondItem="vQQ-R0-020" secondAttribute="centerX" id="2z6-KN-ahl"/>
                                                     <constraint firstAttribute="bottom" secondItem="ndq-Oe-Xw4" secondAttribute="bottom" constant="8" id="5lC-yi-1Mq"/>
-                                                    <constraint firstItem="ARk-S1-DoX" firstAttribute="leading" secondItem="any-wM-g4U" secondAttribute="trailing" constant="8" id="6id-4s-7PQ"/>
                                                     <constraint firstItem="ndq-Oe-Xw4" firstAttribute="leading" secondItem="vQQ-R0-020" secondAttribute="leading" constant="8" id="9a9-u8-tVO"/>
-                                                    <constraint firstItem="ARk-S1-DoX" firstAttribute="top" secondItem="vQQ-R0-020" secondAttribute="top" constant="8" id="JRi-9P-BdI"/>
-                                                    <constraint firstAttribute="trailing" secondItem="ARk-S1-DoX" secondAttribute="trailing" constant="8" id="Owb-t0-F6G"/>
-                                                    <constraint firstItem="ARk-S1-DoX" firstAttribute="height" secondItem="any-wM-g4U" secondAttribute="height" id="S9H-KP-nvF"/>
                                                     <constraint firstAttribute="trailing" secondItem="ndq-Oe-Xw4" secondAttribute="trailing" constant="8" id="axs-82-aP6"/>
-                                                    <constraint firstItem="any-wM-g4U" firstAttribute="leading" secondItem="vQQ-R0-020" secondAttribute="leading" constant="8" id="epC-Jp-dgo"/>
                                                     <constraint firstItem="any-wM-g4U" firstAttribute="top" secondItem="vQQ-R0-020" secondAttribute="top" constant="8" id="muK-zx-H1E"/>
                                                     <constraint firstItem="ndq-Oe-Xw4" firstAttribute="top" secondItem="any-wM-g4U" secondAttribute="bottom" constant="8" id="nd3-JB-PPJ"/>
                                                 </constraints>
