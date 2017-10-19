@@ -293,6 +293,8 @@
                         <outletCollection property="fields" destination="any-wM-g4U" collectionClass="NSMutableArray" id="h7a-rJ-eGn"/>
                         <outletCollection property="textViews" destination="ndq-Oe-Xw4" collectionClass="NSMutableArray" id="XHs-YJ-WKl"/>
                         <outletCollection property="fields" destination="WVE-eE-Kgi" collectionClass="NSMutableArray" id="60j-20-TUl"/>
+                        <outletCollection property="textViews" destination="q65-SH-Mew" collectionClass="NSMutableArray" id="jtZ-Wt-Mbs"/>
+                        <outletCollection property="textViews" destination="SbQ-LG-4aZ" collectionClass="NSMutableArray" id="4uB-fB-PgB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

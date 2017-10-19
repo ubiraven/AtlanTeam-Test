@@ -9,17 +9,41 @@
 import UIKit
 import SDWebImage
 import AFNetworking
-//https://jsonplaceholder.typicode.com
+
+enum FieldNames: String {
+    case title
+}
+extension NSDictionary {
+    subscript(_ field: FieldNames) -> Any? {
+        return self.object(forKey: field.rawValue)
+    }
+    subscript(_ fields: FieldNames...) -> Any? {
+        var result = self
+        var i = 0
+        while let object = result.object(forKey: fields[i].rawValue) as? NSDictionary {
+            result = object
+            i += 1
+        }
+        return result.object(forKey: fields[i].rawValue)
+    }
+}
 
 class FirstViewController: UIViewController, UITextFieldDelegate {
    
+    enum BaseURL: String {
+        case posts = "https://jsonplaceholder.typicode.com/posts"
+        case comments = "https://jsonplaceholder.typicode.com/comments"
+        case users = "https://jsonplaceholder.typicode.com/users"
+        case photo = "https://jsonplaceholder.typicode.com/photos"
+        case todos = "https://jsonplaceholder.typicode.com/todos"
+    }
     
     @IBOutlet var fields: [UITextField]!
     @IBOutlet var textViews: [UITextView]!    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cardThreeStack: UIStackView!
     
-    //var data: Dictionary<Int, Array<NSDictionary>>
+    var data: Dictionary<Int, Array<NSDictionary>> = [0: Array()]
     let characters = CharacterSet(charactersIn: "0123456789")
     let requestOperationManager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager.init(
         baseURL: URL.init(string: "https://jsonplaceholder.typicode.com"))
@@ -54,10 +78,25 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         for field in fields {
             field.delegate = self
         }
+        
+        let toDosURL = BaseURL.todos.rawValue + "/" + String(arc4random_uniform(200) + 1)
+        requestOperationManager.get(toDosURL, parameters: nil, success: { (operation, responseObject) in
+            print(responseObject)
+            self.data.updateValue([responseObject as! NSDictionary], forKey: 5)
+            for textView in self.textViews {
+                if textView.tag == 503 {
+                    print("!")
+                    textView.text = self.data[5]![0][FieldNames.title] as! String
+                }
+            }
+        }) { (operation, error) in
+            
+        }
+        
+        
         let imageURL = URL.init(string: "https://placehold.it/600/24f355")
         imageView.sd_setImageWithPreviousCachedImage(with: imageURL, placeholderImage: nil, options: SDWebImageOptions.lowPriority, progress: { (receivedSize: Int, expectedSize: Int) in
         }, completed: { (image: UIImage?, error: Error?, cacheType: SDImageCacheType, imageURL: URL?) in
