@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -295,6 +295,11 @@
                         <outletCollection property="fields" destination="WVE-eE-Kgi" collectionClass="NSMutableArray" id="60j-20-TUl"/>
                         <outletCollection property="textViews" destination="q65-SH-Mew" collectionClass="NSMutableArray" id="jtZ-Wt-Mbs"/>
                         <outletCollection property="textViews" destination="SbQ-LG-4aZ" collectionClass="NSMutableArray" id="4uB-fB-PgB"/>
+                        <outletCollection property="cardThreeButtons" destination="iht-b1-I7O" collectionClass="NSMutableArray" id="bae-GQ-Ycd"/>
+                        <outletCollection property="cardThreeButtons" destination="vjt-I1-Yc8" collectionClass="NSMutableArray" id="4ja-Ia-uPM"/>
+                        <outletCollection property="cardThreeButtons" destination="xyc-32-B1x" collectionClass="NSMutableArray" id="d93-Yi-bYD"/>
+                        <outletCollection property="cardThreeButtons" destination="2yc-aY-vbF" collectionClass="NSMutableArray" id="45g-sY-qVm"/>
+                        <outletCollection property="cardThreeButtons" destination="GEb-IA-CTs" collectionClass="NSMutableArray" id="3RW-Rn-zhL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

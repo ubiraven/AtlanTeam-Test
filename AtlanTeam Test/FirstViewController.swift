@@ -11,7 +11,7 @@ import SDWebImage
 import AFNetworking
 
 enum FieldNames: String {
-    case title
+    case userId, id, title, body, postId, name, email, completed, username, phone, website
 }
 extension NSDictionary {
     subscript(_ field: FieldNames) -> Any? {
@@ -37,12 +37,21 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         case photo = "https://jsonplaceholder.typicode.com/photos"
         case todos = "https://jsonplaceholder.typicode.com/todos"
     }
+    enum Section: Int {
+        case posts = 1
+        case comments = 2
+        case users = 3
+        case photo = 4
+        case todos = 5
+    }
+    
     
     @IBOutlet var fields: [UITextField]!
     @IBOutlet var textViews: [UITextView]!    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cardThreeStack: UIStackView!
     
+    @IBOutlet var cardThreeButtons: [UIButton]!
     var data: Dictionary<Int, Array<NSDictionary>> = [0: Array()]
     let characters = CharacterSet(charactersIn: "0123456789")
     let requestOperationManager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager.init(
@@ -68,7 +77,15 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                         view.isHidden = true
                     }
                 }
-                (self.cardThreeStack.arrangedSubviews[5] as! UITextView).text = "grdgrdgrg"
+                let tag = selectedButton.tag % 100 - 1
+                let text = self.composeTextFrom(self.data[3]![tag], keysOrder: FieldNames.id.rawValue,
+                                                                               FieldNames.name.rawValue,
+                                                                               FieldNames.username.rawValue,
+                                                                               FieldNames.email.rawValue,
+                                                                               //FieldNames.id.rawValue
+                                                                               FieldNames.phone.rawValue,
+                                                                               FieldNames.website.rawValue)
+                (self.cardThreeStack.arrangedSubviews[5] as! UITextView).text = text
                 self.cardThreeStack.arrangedSubviews[5].isHidden = false
                 self.cardThreeStack.distribution = .fill
             }
@@ -82,16 +99,18 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             field.delegate = self
         }
         
+        let usersURL = BaseURL.users.rawValue
+        requestOperationManager.get(usersURL, parameters: nil, success: { (operation, responseObject) in
+            print(responseObject)
+            self.updateDataForSection(.users, withElement: responseObject as! Array<NSDictionary>)
+        }) { (operation, error) in
+            
+        }
+        
         let toDosURL = BaseURL.todos.rawValue + "/" + String(arc4random_uniform(200) + 1)
         requestOperationManager.get(toDosURL, parameters: nil, success: { (operation, responseObject) in
             print(responseObject)
-            self.data.updateValue([responseObject as! NSDictionary], forKey: 5)
-            for textView in self.textViews {
-                if textView.tag == 503 {
-                    print("!")
-                    textView.text = self.data[5]![0][FieldNames.title] as! String
-                }
-            }
+            self.updateDataForSection(.todos, withElement: Array.init(arrayLiteral: responseObject as! NSDictionary))
         }) { (operation, error) in
             
         }
@@ -108,7 +127,81 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func updateDataForSection(_ section: Section, withElement: Array<NSDictionary>) {
+        data.updateValue(withElement, forKey: section.rawValue)
+        switch section.rawValue {
+        case 1,2,5:
+            let data = self.data[section.rawValue]![0]
+            let textViewTag = section.rawValue * 100 + 3
+            switch textViewTag {
+            case 103:
+                for textView in textViews {
+                    if textView.tag == textViewTag {
+                        textView.text = composeTextFrom(data, keysOrder: FieldNames.userId.rawValue,FieldNames.id.rawValue,FieldNames.title.rawValue,FieldNames.body.rawValue)
+                    }}
+            case 203:
+                for textView in textViews {
+                    if textView.tag == textViewTag {
+                        textView.text = composeTextFrom(data, keysOrder: FieldNames.postId.rawValue,FieldNames.id.rawValue,FieldNames.name.rawValue,FieldNames.email.rawValue,FieldNames.body.rawValue)
+                    }}
+            case 503:
+                for textView in textViews {
+                    if textView.tag == textViewTag {
+                        textView.text = composeTextFrom(data, keysOrder: FieldNames.userId.rawValue,FieldNames.id.rawValue,FieldNames.title.rawValue,FieldNames.completed.rawValue)
+                    }}
+            default:
+                break
+            }
+        case 3:
+            let data = self.data[3]!
+            for button in cardThreeButtons {
+                switch button.tag {
+                case 301:
+                    button.setTitle(data[0][FieldNames.username] as? String, for: UIControlState.normal)
+                case 302:
+                    button.setTitle(data[1][FieldNames.username] as? String, for: UIControlState.normal)
+                case 303:
+                    button.setTitle(data[2][FieldNames.username] as? String, for: UIControlState.normal)
+                case 304:
+                    button.setTitle(data[3][FieldNames.username] as? String, for: UIControlState.normal)
+                case 305:
+                    button.setTitle(data[4][FieldNames.username] as? String, for: UIControlState.normal)
+                default:
+                    break
+                }
+            }
+        default:
+            break
+        }
+    }
+    func composeTextFrom(_ dictionary: NSDictionary, keysOrder: String...) -> String {
+        func convertIntoText(_ value: Any) -> String {
+            var text = ""
+            if let value = value as? Bool {
+                if value == true {
+                    text = "true"
+                } else {
+                    text = "false"
+                }
+            } else if let value = value as? String {
+                text = value
+            } else if let value = value as? Int {
+                text = String(describing: value)
+            }
+            return text
+        }
+        var text: String = ""
+        for key in keysOrder {
+            if let value = dictionary.object(forKey: key) {
+                text.append(key + ": " + convertIntoText(value) + "\n")
+            }
+        }
+        let _text = String(text.dropLast())
+        return _text
+    }
+    
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == "" {
             return true
@@ -123,6 +216,5 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
-
 }
 
