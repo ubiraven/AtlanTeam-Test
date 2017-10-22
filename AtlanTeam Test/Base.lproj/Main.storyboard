@@ -36,7 +36,7 @@
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                     </textField>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Введите значение от 1 до 100" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-LG-4aZ">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="103" contentMode="scaleToFill" editable="NO" text="Введите значение от 1 до 100" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbQ-LG-4aZ">
                                                         <rect key="frame" x="8" y="38" width="153.5" height="137.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -78,9 +78,9 @@
                                                         </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                     </textField>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Введите значение от 1 до 500" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndq-Oe-Xw4">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="203" contentMode="scaleToFill" editable="NO" text="Введите значение от 1 до 500" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndq-Oe-Xw4">
                                                         <rect key="frame" x="8" y="38" width="153.5" height="137.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -278,6 +278,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="P5f-Jf-bns" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="12" id="I1d-TP-QkM"/>
                             <constraint firstItem="P5f-Jf-bns" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="12" id="ZgO-8n-R43"/>
@@ -285,6 +286,9 @@
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="P5f-Jf-bns" secondAttribute="bottom" constant="12" id="pnO-ar-uio"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5Ld-oI-Xg3" appends="YES" id="i5E-TF-Md7"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="acW-dT-cKf"/>
                     <connections>
@@ -303,6 +307,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="5Ld-oI-Xg3">
+                    <connections>
+                        <action selector="clearKeyboard:" destination="9pv-A4-QxB" id="Ty7-gT-ZCH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="748" y="-321.58920539730138"/>
         </scene>
