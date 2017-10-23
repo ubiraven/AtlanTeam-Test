@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 import AFNetworking
 
+//для удобства доступа к элементам Dictionary, описываем названия полей, по субскрипту залазим куда нужно, нужно знать структуру словаря и какой ожидается элемент на выходе
 enum FieldNames: String {
     case userId, id, title, body, postId, name, email, completed, username, phone, website, address, street, suite, city, zipcode, geo, lat, lng, company, catchPhrase, bs, url
 }
@@ -47,19 +48,19 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         case photo = 4
         case todos = 5
     }
-    
-    
+
     @IBOutlet var fields: [UITextField]!
     @IBOutlet var textViews: [UITextView]!    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cardThreeStack: UIStackView!
-    
     @IBOutlet var cardThreeButtons: [UIButton]!
-    var data: Dictionary<Int, Array<NSDictionary>> = [0: Array()]
-    let characters = CharacterSet(charactersIn: "0123456789")
+    
+    var data: Dictionary<Int, Array<NSDictionary>> = [0: Array()] //данные для карточек, ключ - номер секции
+    let characters = CharacterSet(charactersIn: "0123456789") //допустимые символы при вводе
     let requestOperationManager: AFHTTPRequestOperationManager = AFHTTPRequestOperationManager.init(
         baseURL: URL.init(string: "https://jsonplaceholder.typicode.com"))
     
+    //убирает клавиатуру при нажатии на свободное место
     @IBAction func clearKeyboard(_ sender: Any) {
         for field in fields {
             if field.isFirstResponder == true {
@@ -67,8 +68,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    //работа кнопок 3 карточки
     @IBAction func userSelection(_ sender: Any) {
         let selectedButton = sender as! UIButton
+        //возврат к списку пользователей
         if selectedButton.isSelected == true {
             selectedButton.isSelected = false
             UIView.animate(withDuration: 0.2) {
@@ -82,14 +85,17 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         } else {
             selectedButton.isSelected = true
             UIView.animate(withDuration: 0.2) {
+                //скрывает все кнопки кроме нажатой
                 for view in self.cardThreeStack.arrangedSubviews {
                     if view.tag != selectedButton.tag {
                         view.isHidden = true
                     }
                 }
-                let tag = selectedButton.tag % 100 - 1
+                let tag = selectedButton.tag % 100 - 1 //определяет элемент в массиве с данными для 3 секции
                 let data = self.data[3]![tag]
+                //составляет текст для 3 секции
                 let text = self.composeTextFrom(data, keysOrder:
+                                  // по этому отступу можно определить как будут располагаться элементы
                                   FieldNames.id.rawValue,
                                   FieldNames.name.rawValue,
                                   FieldNames.username.rawValue,
@@ -112,7 +118,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                                   FieldNames.name.rawValue,
                                   FieldNames.catchPhrase.rawValue,
                                   FieldNames.bs.rawValue)
-                //let text = String.init(describing: data)
+                //let text = String.init(describing: data) //заменяет всю предыдущую команду, но текст не очень хорошо читается
                 (self.cardThreeStack.arrangedSubviews[5] as! UITextView).text = text
                 self.cardThreeStack.arrangedSubviews[5].isHidden = false
                 self.cardThreeStack.distribution = .fill
@@ -126,15 +132,15 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         for field in fields {
             field.delegate = self
         }
-        
+        //загрузка данных для 3,4,5 секции
         let usersURL = BaseURL.users.rawValue
         requestOperationManager.get(usersURL, parameters: nil, success: { (operation, responseObject) in
             //print(responseObject)
             self.updateDataForSection(.users, withElement: responseObject as! Array<NSDictionary>)
         }) { (operation, error) in
-            
+    
         }
-        let toDosURL = BaseURL.todos.rawValue + "/" + String(arc4random_uniform(200) + 1)
+        let toDosURL = BaseURL.todos.rawValue + "/" + String(arc4random_uniform(200) + 1) //выбор случайного значения
         requestOperationManager.get(toDosURL, parameters: nil, success: { (operation, responseObject) in
             //print(responseObject)
             self.updateDataForSection(.todos, withElement: Array.init(arrayLiteral: responseObject as! NSDictionary))
@@ -147,14 +153,13 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         }) { (opration, error) in
             
         }
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //обновление данных для карточек
     func updateDataForSection(_ section: Section, withElement: Array<NSDictionary>) {
         data.updateValue(withElement, forKey: section.rawValue)
         switch section.rawValue {
@@ -200,7 +205,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             }
         case 4:
             let photoURL = data[4]![0][FieldNames.url] as! String
-            let _photoURL = photoURL.replacingOccurrences(of: "http", with: "https")
+            let _photoURL = photoURL.replacingOccurrences(of: "http", with: "https") //замена протокола
             let url = URL.init(string: _photoURL)
             imageView.sd_setImageWithPreviousCachedImage(with: url, placeholderImage: nil, options: SDWebImageOptions.lowPriority, progress: { (receivedSize: Int, expectedSize: Int) in
             }, completed: { (image: UIImage?, error: Error?, cacheType: SDImageCacheType, imageURL: URL?) in
@@ -209,33 +214,20 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             break
         }
     }
+    //составляет читаемый текст из объектов словаря: "ключ": "значение"\n по заданному порядку
     func composeTextFrom(_ dictionary: NSDictionary, keysOrder: String...) -> String {
-        func convertIntoText(_ value: Any) -> String {
-            var text = ""
-            if let value = value as? Bool {
-                if value == true {
-                    text = "true"
-                } else {
-                    text = "false"
-                }
-            } else if let value = value as? String {
-                text = value
-            } else if let value = value as? Int {
-                text = String(describing: value)
-            }
-            return text
-        }
         var text: String = ""
         for key in keysOrder {
             if let value = dictionary.object(forKey: key) {
-                text.append(key + ": " + convertIntoText(value) + "\n")
+                text.append(key + ": " + String(describing: value) + "\n")
             }
         }
         let _text = String(text.dropLast())
         return _text
     }
     
-    
+    //MARK: - textFieldDelegate
+    //в текстовое поле можно ввести только цифры и удалить их
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == "" {
             return true
@@ -250,6 +242,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
+    //проверка введенного в поле значения (1-100) и (1-500) и запрос к серверу
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text != nil {
             var number = Int(textField.text!)
@@ -263,7 +256,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                     textField.text = "100"
                     number = 100
                 }
-                let postsURL = BaseURL.posts.rawValue + "/" + textField.text!
+                let postsURL = BaseURL.posts.rawValue + "/" + String(describing: number!)
                 requestOperationManager.get(postsURL, parameters: nil, success: { (operation, responseObject) in
                     //print(responseObject)
                     self.updateDataForSection(.posts, withElement: Array.init(arrayLiteral: responseObject as! NSDictionary))
@@ -275,7 +268,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
                     textField.text = "500"
                     number = 500
                 }
-                let commentsURL = BaseURL.comments.rawValue + "/" + textField.text!
+                let commentsURL = BaseURL.comments.rawValue + "/" + String(describing: number!)
                 requestOperationManager.get(commentsURL, parameters: nil, success: { (operation, responseObject) in
                     //print(responseObject)
                     self.updateDataForSection(.comments, withElement: Array.init(arrayLiteral: responseObject as! NSDictionary))
